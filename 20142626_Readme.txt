@@ -1,0 +1,25 @@
+PHAN HỒNG LĨNH 20142626
+Hướng dẫn các bước làm:
+------------------------
+  **** TÌM HẰNG SỐ LAMDA ****
+- B1: Từ dữ liệu training đọc từ file ta tác ra 1/4 dữ liệu validation data nhằm để tìm lamda. 
+3/4 dữ liệu còn lại để tính w sau khi có lamda.
+
+- B2: 
+Với dữ liệu validation data:
++ Tách ra 2 matrix Av và Yv (Ma trận hệ số và ma trận kết quả)
+- B3: Tìm lamda:
+ Cho lamda chạy từ khoảng 0.001 --> 100, chọn bước nhảy là 9.
+ Mỗi lần lamda chạy --> Tính hàm lỗi trên tập validation Data.
+ --> Mỗi vòng lặp tìm ra 1 lamda làm hàm lỗi đạt giá trị nhỏ nhất.
+ Từ lamda vừa tìm được ở vòng lặp trước, giảm bước nhảy xuống nhỏ hơn, tiếp tục cho lamda chạy trong khoảng lân cận đó.
+ --> Tìm được lamda với hàm lỗi có giá trị nhỏ hơn.
+==> Cứ tiếp tục đệ quy như vậy cho đến khi hàm lỗi nhỏ hơn 1 số cho trước (trong code tên biến là rssCeil)
+ 		
+		********
+-4: sau khi tìm được lamda ở bước 3, tiến hành training cho 3/4 dữ liệu còn lại theo công thức tính SGK để tìm ra ma trận hệ số W
+
+-B5: Tính Y = A.w Với A là matrix dữ liệu test.
+-B6: Lưu kết quả ra file. 
+
+Enjoy Result.
